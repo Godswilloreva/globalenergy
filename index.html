@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Voting Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    /* HEADER SLIDESHOW */
+    .slideshow {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+    }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .header-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    .header-overlay h1 {
+      font-size: 2.5rem;
+      margin: 0 0 15px;
+    }
+    .vote-link {
+      padding: 12px 25px;
+      background: #ff9800;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .vote-link:hover {
+      background: #e68900;
+    }
+
+    /* WORKERS GRID */
+    .workers {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .workers h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #333;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .worker-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 15px;
+    }
+    .worker-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .worker-card h3 {
+      margin: 10px 0 5px;
+      color: #222;
+    }
+    .worker-card p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 40px;
+    }
+    footer h3 {
+      margin: 0 0 10px;
+      color: #fff;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER WITH SLIDESHOW -->
+  <div class="slideshow">
+    <img src="drilling3.jpg" class="slide active">
+    <img src="drilling2.jpg" class="slide">
+    <img src="drilling1.jpg" class="slide">
+
+
+
+    <div class="header-overlay">
+      <h1>Our Workers, Our Strength</h1>
+     <h5>Vote which workers you think needs promotion</h5>
+      <a href="vote.html" class="vote-link">Vote for Promotion</a>
+    </div>
+  </div>
+
+  <!-- WORKERS GRID -->
+  <section class="workers">
+    <h2>Meet Our Dedicated Workers</h2>
+    <div class="grid">
+      <div class="worker-card">
+        <img src="worker1.jpg" alt="Worker 1">
+        <h3>Caldweyl œ Anthonelly jpr</h3>
+        <p>Drilling Contractor Manager</p>
+      </div>
+
+
+
+      <div class="worker-card">
+        <img src="worker2.jpg" alt="Worker 2">
+        <h3>Mary Smith</h3>
+        <p>Safety Supervisor</p>
+      </div>
+
+
+
+      <div class="worker-card">
+        <img src="worker3.jpg" alt="Worker 3">
+        <h3>Ali Khan</h3>
+        <p>Rig Operator</p>
+      </div>
+
+
+
+      <div class="worker-card">
+        <img src="worker4.jpg" alt="Worker 4">
+        <h3>Jane Lee</h3>
+        <p>Logistics Manager</p>
+      </div>
+
+
+
+      <div class="worker-card">
+        <img src="worker5.jpg" alt="Worker 5">
+        <h3>Chris Marinello okihamoa</h3>
+        <p>Technical Officer</p>
+      </div>
+
+
+
+      <div class="worker-card">
+        <img src="worker6.jpg" alt="Worker 6">
+        <h3>Sofia Whiyt Parolyn & Jonathan Miguel Brothers</h3>
+        <p>Mechanical Engineer</p>
+      </div>
+
+
+
+      <div class="worker-card">
+        <img src="worker7.jpg" alt="Worker 7">
+        <h3>David Miller</h3>
+        <p>Electrical Technician</p>
+      </div>
+
+
+      <div class="worker-card">
+        <img src="worker8.jpg" alt="Worker 8">
+        <h3>Linda Green</h3>
+        <p>Operations Supervisor</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <h3>GLOBAL ENERGY OIL & GASDRILL</h3>
+    <p>Abu Dhabi, UAE</p>
+    <p>Building the Future, One Rig at a Time</p>
+  </footer>
+
+  <script>
+    // Simple slideshow
+    let slides = document.querySelectorAll('.slide');
+    let index = 0;
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 4000);
+  </script>
+
+</body>
+</html>
