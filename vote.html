@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voting Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(to right, #005bea, #00c6fb);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .card h3 {
+      margin: 15px 0 5px;
+      font-size: 20px;
+      color: #333;
+    }
+    .card p {
+      margin: 5px 0 15px;
+      font-size: 14px;
+      color: #666;
+    }
+    .votes {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #005bea;
+    }
+    .vote-btn {
+      background: #005bea;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .vote-btn:hover {
+      background: #0041a8;
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Vote for the Best Worker of the Year
+  </header>
+
+  <div class="container">
+    <!-- Worker 1 -->
+    <div class="card" data-id="1" data-increment="4" data-interval="20000">
+      <img src="worker1.jpg" alt="Caldweyl œ Anthonelly jpr">
+      <h3>Caldweyl œ Anthonelly jpr</h3>
+      <p>Drilling Contractor Manager</p>
+      <div class="votes">Votes: <span>0</span></div>
+      <a class="vote-btn" href="pay.html" target="_blank">Vote ($100)</a>
+    </div>
+
+    <!-- Worker 2 -->
+    <div class="card" data-id="2" data-increment="1" data-interval="987000">
+      <img src="worker2.jpg" alt="J.W Smith">
+      <h3>J.W Smith</h3>
+      <p>Safety Supervisor</p>
+      <div class="votes">Votes: <span>0</span></div>
+      <a class="vote-btn" href="pay.html" target="_blank">Vote ($100)</a>
+    </div>
+
+    <!-- Worker 3 -->
+    <div class="card" data-id="3" data-increment="2" data-interval="98000">
+      <img src="worker3.jpg" alt="Ali Khan">
+      <h3>Ali Khan</h3>
+      <p>Rig Operator</p>
+      <div class="votes">Votes: <span>0</span></div>
+      <a class="vote-btn" href="pay.html" target="_blank">Vote ($100)</a>
+    </div>
+
+    <!-- Worker 4 -->
+    <div class="card" data-id="4" data-increment="1" data-interval="70000">
+      <img src="worker4.jpg" alt="Matthew Lee">
+      <h3>Matthew Lee</h3>
+      <p>Logistics Manager</p>
+      <div class="votes">Votes: <span>0</span></div>
+      <a class="vote-btn" href="pay.html" target="_blank">Vote ($100)</a>
+    </div>
+
+    <!-- Worker 5 -->
+    <div class="card" data-id="5" data-increment="1" data-interval="20000">
+      <img src="worker5.jpg" alt="Chris Marinello okihamoa">
+      <h3>Chris Marinello okihamoa</h3>
+      <p>Technical Officer</p>
+      <div class="votes">Votes: <span>0</span></div>
+      <a class="vote-btn" href="pay.html" target="_blank">Vote ($100)</a>
+    </div>
+
+    <!-- Worker 6 -->
+    <div class="card" data-id="6" data-increment="1" data-interval="500000">
+      <img src="worker6.jpg" alt="Sofia Whiyt Parolyn & Jonathan Miguel Brothers">
+      <h3>Sofia Whiyt Parolyn & Jonathan Miguel Brothers</h3>
+      <p>Mechanical Engineer</p>
+      <div class="votes">Votes: <span>0</span></div>
+      <a class="vote-btn" href="pay.html" target="_blank">Vote ($100)</a>
+    </div>
+
+    <!-- Worker 7 -->
+    <div class="card" data-id="7" data-increment="1" data-interval="50000">
+      <img src="worker7.jpg" alt="David Miller jnr">
+      <h3>David Miller jnr</h3>
+      <p>Electrical Technician</p>
+      <div class="votes">Votes: <span>0</span></div>
+      <a class="vote-btn" href="pay.html" target="_blank">Vote ($100)</a>
+    </div>
+
+    <!-- Worker 8 -->
+    <div class="card" data-id="8" data-increment="1" data-interval="10000">
+      <img src="worker8.jpg" alt="Sorend Lendrick Green">
+      <h3>Sorend Lendrick Green</h3>
+      <p>Operations Supervisor</p>
+      <div class="votes">Votes: <span>0</span></div>
+      <a class="vote-btn" href="pay.html" target="_blank">Vote ($100)</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Company Voting System - All Rights Reserved
+  </footer>
+
+  <script>
+    document.querySelectorAll(".card").forEach(card => {
+      const id = card.dataset.id;
+      const increment = parseInt(card.dataset.increment);
+      const interval = parseInt(card.dataset.interval);
+      const voteSpan = card.querySelector(".votes span");
+
+      // Load saved votes
+      let votes = parseInt(localStorage.getItem("votes_" + id)) || 0;
+      voteSpan.textContent = votes;
+
+      // Auto increase
+      setInterval(() => {
+        votes += increment;
+        voteSpan.textContent = votes;
+        localStorage.setItem("votes_" + id, votes);
+      }, interval);
+    });
+  </script>
+</body>
+</html>
